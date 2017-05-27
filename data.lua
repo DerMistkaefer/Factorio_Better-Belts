@@ -6,15 +6,34 @@ BB.baseGraphicsEntity = "__".. BB.modName .."__/graphics/entity/"
 
 ---------------------- Ultra BELT PICTURES
 ultra_belt_filename = BB.baseGraphicsEntity .. "ultra-transport-belt.png"
-ultra_belt_horizontal = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32}
-ultra_belt_vertical = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 40}
-ultra_belt_ending_top = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 80}
-ultra_belt_ending_bottom = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 120}
-ultra_belt_ending_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 160}
-ultra_belt_starting_top = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 200}
-ultra_belt_starting_bottom = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 240}
-ultra_belt_starting_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 280}
+hr_ultra_belt_filename = BB.baseGraphicsEntity .. "hr-ultra-transport-belt.png"
 
+ultra_belt_horizontal = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, 
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, scale = 0.5}}
+
+ultra_belt_vertical = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 40 ,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 160 ,scale = 0.5 }}
+
+ultra_belt_ending_top = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 80 ,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 320 ,scale = 0.5 }}
+
+ultra_belt_ending_bottom = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 120,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 480 ,scale = 0.5 }}
+
+ultra_belt_ending_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 160,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 640 ,scale = 0.5 }}
+
+ultra_belt_starting_top = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 200,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 800 ,scale = 0.5 }}
+
+ultra_belt_starting_bottom = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 240,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 960 ,scale = 0.5 }}
+
+ultra_belt_starting_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 280,
+	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 1120 ,scale = 0.5}}
+
+
+------------------------------------
 
 function BetterBelts_addItem(baseName,thisName,thisOrder)
 	local obj = util.table.deepcopy(data.raw["item"][baseName])
@@ -47,6 +66,7 @@ function BetterBelts_addEntity_Belt(beltName,beltSpeed)
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
 	obj.animations.filename = BB.baseGraphicsEntity .. beltName .. ".png"
+	obj.animations.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. ".png"
 
 	obj.belt_horizontal = ultra_belt_horizontal
     obj.belt_vertical = ultra_belt_vertical
@@ -72,6 +92,8 @@ function BetterBelts_addEntity_undergroundBelt(beltName,beltSpeed,beltMax_distan
 	obj.icon_size = 32
 	obj.structure.direction_in.sheet.filename = BB.baseGraphicsEntity .. mainName .. "-structure.png"
 	obj.structure.direction_out.sheet.filename = BB.baseGraphicsEntity .. mainName .. "-structure.png"
+	obj.structure.direction_in.sheet.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. mainName .. "-structure.png"
+	obj.structure.direction_out.sheet.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. mainName .. "-structure.png"
 
 	obj.belt_horizontal = ultra_belt_horizontal
     obj.belt_vertical = ultra_belt_vertical
@@ -96,8 +118,15 @@ function BetterBelts_addEntity_Loader(beltName,beltSpeed,beltMax_distance)
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
 	
-	obj.structure.direction_in.sheet.filename = BB.baseGraphicsEntity .. beltName .. "-structure.png"
-	obj.structure.direction_out.sheet.filename = BB.baseGraphicsEntity .. beltName .. "-structure.png"
+	
+	obj.structure.direction_in.sheet.filename = BB.baseGraphicsEntity ..  "ultra-loader-structure.png"
+	obj.structure.direction_in.sheet.width = 128
+    obj.structure.direction_in.sheet.height = 128
+	obj.structure.direction_out.sheet.filename = BB.baseGraphicsEntity .. "ultra-loader-structure.png"
+    obj.structure.direction_out.sheet.width = 128
+    obj.structure.direction_out.sheet.height = 128
+    obj.structure.direction_out.sheet.y = 128
+	
 
 	obj.belt_horizontal = ultra_belt_horizontal
     obj.belt_vertical = ultra_belt_vertical
@@ -125,6 +154,11 @@ function BetterBelts_addEntity_Splitter(beltName,beltSpeed,beltMax_distance)
 	obj.structure.east.filename = BB.baseGraphicsEntity .. beltName .. "-east.png"
 	obj.structure.south.filename = BB.baseGraphicsEntity .. beltName .. "-south.png"
 	obj.structure.west.filename = BB.baseGraphicsEntity .. beltName .. "-west.png"
+	
+	obj.structure.north.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-north.png"
+	obj.structure.east.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-east.png"
+	obj.structure.south.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-south.png"
+	obj.structure.west.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-west.png"
 	
 	obj.belt_horizontal = ultra_belt_horizontal
     obj.belt_vertical = ultra_belt_vertical
