@@ -187,15 +187,15 @@ function BetterBelts_addTechnology(thisName,thisIcon,thisType,thisEffect,thisPre
 	
 	obj.unit.count = thisCount
 	if thisIngredients == 1 then
-		obj.unit.ingredients = {{"science-pack-1", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1}}
 	elseif thisIngredients == 2 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
 	elseif thisIngredients == 3 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
 	elseif thisIngredients == 4 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
 	elseif thisIngredients == 5 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 	end
 	obj.unit.time = thisTime
 	obj.order = thisOrder
