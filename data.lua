@@ -65,17 +65,8 @@ function BetterBelts_addEntity_Belt(beltName,beltSpeed)
 	
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
-	obj.animations.filename = BB.baseGraphicsEntity .. beltName .. ".png"
-	obj.animations.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. ".png"
-
-	obj.belt_horizontal = ultra_belt_horizontal
-    obj.belt_vertical = ultra_belt_vertical
-    obj.ending_top = ultra_belt_ending_top
-    obj.ending_bottom = ultra_belt_ending_bottom
-    obj.ending_side = ultra_belt_ending_side
-    obj.starting_top = ultra_belt_starting_top
-    obj.starting_bottom = ultra_belt_starting_bottom
-    obj.starting_side = ultra_belt_starting_side
+	obj.belt_animation_set.animation_set.filename = BB.baseGraphicsEntity .. beltName .. ".png"
+	obj.belt_animation_set.animation_set.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. ".png"
 	
 	data.raw[obj.type][obj.name] = obj
 end
@@ -187,15 +178,15 @@ function BetterBelts_addTechnology(thisName,thisIcon,thisType,thisEffect,thisPre
 	
 	obj.unit.count = thisCount
 	if thisIngredients == 1 then
-		obj.unit.ingredients = {{"science-pack-1", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1}}
 	elseif thisIngredients == 2 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
 	elseif thisIngredients == 3 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
 	elseif thisIngredients == 4 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
 	elseif thisIngredients == 5 then
-		obj.unit.ingredients = {{"science-pack-1", 1},{"science-pack-2", 1},{"science-pack-3", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
 	end
 	obj.unit.time = thisTime
 	obj.order = thisOrder
