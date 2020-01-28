@@ -32,6 +32,8 @@ ultra_belt_starting_bottom = {filename = ultra_belt_filename, priority = "extra-
 ultra_belt_starting_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 280,
 	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 1120 ,scale = 0.5}}
 
+ultra_belt_animation_set = { animation_set = { filename = ultra_belt_filename, priority = "extra-high", width = 64, height = 64, frame_count = 16, direction_count = 20,
+   hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 128, height = 128, scale = 0.5,	frame_count = 16, direction_count = 20}}}
 
 ------------------------------------
 
@@ -94,6 +96,7 @@ function BetterBelts_addEntity_undergroundBelt(beltName,beltSpeed,beltMax_distan
     obj.starting_top = ultra_belt_starting_top
     obj.starting_bottom = ultra_belt_starting_bottom
     obj.starting_side = ultra_belt_starting_side
+	obj.belt_animation_set = ultra_belt_animation_set
 	
 	data.raw[obj.type][obj.name] = obj
 end
@@ -127,6 +130,7 @@ function BetterBelts_addEntity_Loader(beltName,beltSpeed,beltMax_distance)
     obj.starting_top = ultra_belt_starting_top
     obj.starting_bottom = ultra_belt_starting_bottom
     obj.starting_side = ultra_belt_starting_side
+	obj.belt_animation_set = ultra_belt_animation_set
 	
 	data.raw[obj.type][obj.name] = obj
 end
@@ -159,6 +163,7 @@ function BetterBelts_addEntity_Splitter(beltName,beltSpeed,beltMax_distance)
     obj.starting_top = ultra_belt_starting_top
     obj.starting_bottom = ultra_belt_starting_bottom
     obj.starting_side = ultra_belt_starting_side
+	obj.belt_animation_set = ultra_belt_animation_set
 	
 	data.raw[obj.type][obj.name] = obj
 end
@@ -186,7 +191,7 @@ function BetterBelts_addTechnology(thisName,thisIcon,thisType,thisEffect,thisPre
 	elseif thisIngredients == 4 then
 		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
 	elseif thisIngredients == 5 then
-		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"high-tech-science-pack", 1}}
+		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
 	end
 	obj.unit.time = thisTime
 	obj.order = thisOrder

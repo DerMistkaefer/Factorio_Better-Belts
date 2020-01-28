@@ -5,6 +5,12 @@ https://mods.factorio.com/mods/DerMistkaefer/BetterBelts
 
 
 # Changelog
+1.1.6 - Update to 0.18
+
+1.1.5 - Update to 0.17 by poempelfox - https://github.com/poempelfox
+
+1.1.4 - Update to 0.16 by XiNaru
+
 1.1.3 - Add missing Highresoulution Images | Repaint all Images to fix the green Bleeding | Fix Alpha Issues | Add Loader Grafixs from Angel's Logistics | Add new Loader Icon -https://mods.factorio.com/mods/DerMistkaefer/BetterBelts/discussion/12923
 
 1.1.2 - Fix Sprite Image Problems - https://mods.factorio.com/mods/DerMistkaefer/BetterBelts/discussion/11497

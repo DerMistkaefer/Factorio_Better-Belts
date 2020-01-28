@@ -1,11 +1,11 @@
 {
   "name": "BetterBelts",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "title": "Better Belts",
   "author": "DerMistkaefer, adcrafter27, LaVADraGoN, Updated by: XiNaru",
   "contact": "dermistkaefer@gmail.com",
   "homepage": "https://github.com/DerMistkaefer/Factorio_Better-Belts",
   "description": "This Mod adds Better Belts and Loaders",
-  "factorio_version":"0.17",
-  "dependencies": ["base >= 0.17.0"]
+  "factorio_version":"0.18",
+  "dependencies": ["base >= 0.18.0"]
 }
