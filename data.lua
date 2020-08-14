@@ -42,6 +42,7 @@ function BetterBelts_addItem(baseName,thisName,thisOrder)
 	obj.name = BB.modName .. "_" .. thisName
 	obj.icon = BB.baseGraphicsIcons .. thisName .. ".png"
 	obj.icon_size = 32
+	obj.icon_mipmaps = 0
 	obj.place_result = obj.name
 	obj.order = thisOrder
 	if baseName == "express-loader" then obj.flags = {"goes-to-quickbar"} end
@@ -67,6 +68,8 @@ function BetterBelts_addEntity_Belt(beltName,beltSpeed)
 	
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
+	obj.icon_mipmaps = 0
+
 	obj.belt_animation_set.animation_set.filename = BB.baseGraphicsEntity .. beltName .. ".png"
 	obj.belt_animation_set.animation_set.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. ".png"
 	
@@ -83,6 +86,8 @@ function BetterBelts_addEntity_undergroundBelt(beltName,beltSpeed,beltMax_distan
 	
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
+	obj.icon_mipmaps = 0
+
 	obj.structure.direction_in.sheet.filename = BB.baseGraphicsEntity .. mainName .. "-structure.png"
 	obj.structure.direction_out.sheet.filename = BB.baseGraphicsEntity .. mainName .. "-structure.png"
 	obj.structure.direction_in.sheet.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. mainName .. "-structure.png"
@@ -111,16 +116,15 @@ function BetterBelts_addEntity_Loader(beltName,beltSpeed,beltMax_distance)
 	
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
+	obj.icon_mipmaps = 0
 	
-	
-	obj.structure.direction_in.sheet.filename = BB.baseGraphicsEntity ..  "ultra-loader-structure.png"
+	obj.structure.direction_in.sheet.filename = BB.baseGraphicsEntity .. beltName .. "-structure.png"
 	obj.structure.direction_in.sheet.width = 128
     obj.structure.direction_in.sheet.height = 128
-	obj.structure.direction_out.sheet.filename = BB.baseGraphicsEntity .. "ultra-loader-structure.png"
+	obj.structure.direction_out.sheet.filename = BB.baseGraphicsEntity .. beltName .. "-structure.png"
     obj.structure.direction_out.sheet.width = 128
     obj.structure.direction_out.sheet.height = 128
     obj.structure.direction_out.sheet.y = 128
-	
 
 	obj.belt_horizontal = ultra_belt_horizontal
     obj.belt_vertical = ultra_belt_vertical
@@ -144,6 +148,7 @@ function BetterBelts_addEntity_Splitter(beltName,beltSpeed,beltMax_distance)
 	
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
+	obj.icon_mipmaps = 0
 	
 	obj.structure.north.filename = BB.baseGraphicsEntity .. beltName .. "-north.png"
 	obj.structure.east.filename = BB.baseGraphicsEntity .. beltName .. "-east.png"
@@ -174,6 +179,7 @@ function BetterBelts_addTechnology(thisName,thisIcon,thisType,thisEffect,thisPre
 	
 	obj.icon = BB.baseGraphicsIcons .. thisIcon .. ".png"
 	obj.icon_size = 32
+	obj.icon_mipmaps = 0
 	
 	obj.effects = {}
 	for n,effect in ipairs(thisEffect) do
