@@ -3,8 +3,9 @@ This Mod adds Better Belts and Loaders.
 
 https://mods.factorio.com/mods/DerMistkaefer/BetterBelts
 
-
 # Changelog
+1.2.0 - Update to Factorio 1.0
+
 1.1.6 - Update to 0.18
 
 1.1.5 - Update to 0.17 by poempelfox - https://github.com/poempelfox
