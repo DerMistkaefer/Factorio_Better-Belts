@@ -45,7 +45,7 @@ function BetterBelts_addItem(baseName,thisName,thisOrder)
 	obj.icon_mipmaps = 0
 	obj.place_result = obj.name
 	obj.order = thisOrder
-	if baseName == "express-loader" then obj.flags = {"goes-to-quickbar"} end
+	if baseName == "fast-loader" then obj.flags = null end
 	
 	data.raw[obj.type][obj.name] = obj
 end
@@ -54,6 +54,7 @@ function BetterBelts_addRecipe(baseName,thisName,thisIngredients)
 	local obj = util.table.deepcopy(data.raw["recipe"][baseName])
 	obj.name = BB.modName .. "_" .. thisName
 	obj.enabled = false
+	obj.hidden = false
 	obj.ingredients = thisIngredients
 	obj.result = obj.name
 	data.raw[obj.type][obj.name] = obj
@@ -152,14 +153,24 @@ function BetterBelts_addEntity_Splitter(beltName,beltSpeed,beltMax_distance)
 	
 	obj.structure.north.filename = BB.baseGraphicsEntity .. beltName .. "-north.png"
 	obj.structure.east.filename = BB.baseGraphicsEntity .. beltName .. "-east.png"
+	obj.structure.east.height = 80
+	obj.structure.east.shift = util.by_pixel(4, -6)
 	obj.structure.south.filename = BB.baseGraphicsEntity .. beltName .. "-south.png"
 	obj.structure.west.filename = BB.baseGraphicsEntity .. beltName .. "-west.png"
+	obj.structure.west.height = 76
+	obj.structure.west.shift = util.by_pixel(6, -4)
 	
 	obj.structure.north.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-north.png"
 	obj.structure.east.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-east.png"
+	obj.structure.east.hr_version.height = 160
+	obj.structure.east.hr_version.shift = util.by_pixel(4, -6)
 	obj.structure.south.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-south.png"
 	obj.structure.west.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. "-west.png"
+	obj.structure.west.hr_version.height = 150
+	obj.structure.west.hr_version.shift = util.by_pixel(5, -4)
 	
+	obj.structure_patch = null
+
 	obj.belt_horizontal = ultra_belt_horizontal
     obj.belt_vertical = ultra_belt_vertical
     obj.ending_top = ultra_belt_ending_top
