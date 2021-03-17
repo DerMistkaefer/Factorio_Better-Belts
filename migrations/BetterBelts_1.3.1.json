@@ -1,0 +1,17 @@
+{
+    "item":
+    [
+        ["Ultra-CompactLoader", "BetterBelts_ultra-deadlock-loader"],
+        ["Ultra-Beltbox", "BetterBelts_ultra-deadlock-beltbox"]
+    ],
+    "recipe":
+    [
+        ["Ultra-CompactLoader", "BetterBelts_ultra-deadlock-loader"],
+        ["Ultra-Beltbox", "BetterBelts_ultra-deadlock-beltbox"]
+    ],
+    "entity":
+    [
+        ["Ultra-CompactLoader", "BetterBelts_ultra-deadlock-loader"],
+        ["Ultra-Beltbox", "BetterBelts_ultra-deadlock-beltbox"]
+    ]
+  }

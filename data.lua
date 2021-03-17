@@ -60,12 +60,13 @@ function BetterBelts_addRecipe(baseName,thisName,thisIngredients)
 	data.raw[obj.type][obj.name] = obj
 end
 
-function BetterBelts_addEntity_Belt(beltName,beltSpeed)
+function BetterBelts_addEntity_Belt(beltName,beltSpeed, relatedUndergroundBelt)
 	local obj = util.table.deepcopy(data.raw["transport-belt"]["express-transport-belt"])
 	obj.name = BB.modName .. "_" .. beltName
 	obj.minable.result = obj.name
 	
 	obj.speed = beltSpeed
+	obj.related_underground_belt = BB.modName .. "_" .. relatedUndergroundBelt
 	
 	obj.icon = BB.baseGraphicsIcons .. beltName .. ".png"
 	obj.icon_size = 32
@@ -75,6 +76,7 @@ function BetterBelts_addEntity_Belt(beltName,beltSpeed)
 	obj.belt_animation_set.animation_set.hr_version.filename = BB.baseGraphicsEntity .. "hr-" .. beltName .. ".png"
 	
 	data.raw[obj.type][obj.name] = obj
+	data.raw["transport-belt"]["express-transport-belt"].next_upgrade = obj.name
 end
 
 function BetterBelts_addEntity_undergroundBelt(beltName,beltSpeed,beltMax_distance,mainName)
@@ -138,6 +140,7 @@ function BetterBelts_addEntity_Loader(beltName,beltSpeed,beltMax_distance)
 	obj.belt_animation_set = ultra_belt_animation_set
 	
 	data.raw[obj.type][obj.name] = obj
+	data.raw["loader"]["express-loader"].next_upgrade = obj.name
 end
 
 function BetterBelts_addEntity_Splitter(beltName,beltSpeed,beltMax_distance)
@@ -182,6 +185,7 @@ function BetterBelts_addEntity_Splitter(beltName,beltSpeed,beltMax_distance)
 	obj.belt_animation_set = ultra_belt_animation_set
 	
 	data.raw[obj.type][obj.name] = obj
+	data.raw["splitter"]["express-splitter"].next_upgrade = obj.name
 end
 
 function BetterBelts_addTechnology(thisName,thisIcon,thisType,thisEffect,thisPrerequisites,thisCount,thisIngredients,thisTime,thisOrder,className,modName)
@@ -223,7 +227,7 @@ function BetterBelts_BeltClass(className,classSpeed)
 
 	BetterBelts_addItem("fast-transport-belt",className .. "-transport-belt","a[transport-belt]-d[" .. className .. "-transport-belt]")
 	BetterBelts_addRecipe("fast-transport-belt",className .. "-transport-belt",{{"iron-gear-wheel", 5},{"express-transport-belt", 2}})
-	BetterBelts_addEntity_Belt(className .. "-transport-belt",classSpeed)
+	BetterBelts_addEntity_Belt(className .. "-transport-belt",classSpeed, className .. "-underground-belt-v1")
 
 
 	BetterBelts_addItem("fast-underground-belt",className .. "-underground-belt-v1","b[underground-belt]-d[" .. className .. "-underground-belt-v1]")
@@ -248,7 +252,13 @@ function BetterBelts_BeltClass(className,classSpeed)
 	BetterBelts_addTechnology(className .. "-class",className .. "-transport-belt","unlock-recipe",classRecipes,{"logistics-3"},150,4,30,"a",className,BB.modName)
 end
 
-
+--activate again default loaders
+data.raw["loader"]["loader"].flags = {"placeable-neutral", "player-creation"}
+data.raw["loader"]["fast-loader"].flags = {"placeable-neutral", "player-creation"}
+data.raw["loader"]["express-loader"].flags = {"placeable-neutral", "player-creation"}
+data.raw["item"]["loader"].flags = null
+data.raw["item"]["fast-loader"].flags = null
+data.raw["item"]["express-loader"].flags = null
 
 BetterBelts_BeltClass("ultra",0.2)
 

@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.1
+Date: 17.03.2021
+  Features:
+    - Add deadlock tier by draddy82 - https://github.com/draddy82
+    - Add next_upgrade to entities
+    - Add related_underground_belt to normal belts - Thanks JanSharp - https://github.com/JanSharp
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 06.12.2020
   Features:
