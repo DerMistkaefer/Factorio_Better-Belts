@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+Date: 15.02.2025
+  Fixes:
+    - No more `hr_version` key as all sprites/animations are HR now
+    - fixed length, x/y and added missing properties
+    - formatted some code a bit better
+    - added POSIX new-line character to not have strict POSIX parsers crash
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
 Date: 07.11.2024
   Features:

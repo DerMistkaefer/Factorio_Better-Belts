@@ -1,39 +1,103 @@
 --CODE
 BB = {}
 BB.modName = "BetterBelts"
-BB.baseGraphicsIcons = "__".. BB.modName .."__/graphics/icons/"
-BB.baseGraphicsEntity = "__".. BB.modName .."__/graphics/entity/"
+BB.baseGraphicsIcons = "__".. BB.modName .. "__/graphics/icons/"
+BB.baseGraphicsEntity = "__" .. BB.modName .. "__/graphics/entity/"
 
 ---------------------- Ultra BELT PICTURES
 ultra_belt_filename = BB.baseGraphicsEntity .. "ultra-transport-belt.png"
-hr_ultra_belt_filename = BB.baseGraphicsEntity .. "hr-ultra-transport-belt.png"
 
-ultra_belt_horizontal = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, scale = 0.5}}
+ultra_belt_horizontal = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	scale = 0.5
+}
+ultra_belt_vertical = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	y = 160,
+	scale = 0.5
+}
+ultra_belt_ending_top = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	y = 320,
+	scale = 0.5
+}
+ultra_belt_ending_bottom = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	y = 480,
+	scale = 0.5
+}
+ultra_belt_ending_side = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	y = 640,
+	scale = 0.5
+}
+ultra_belt_starting_top = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	y = 800,
+	scale = 0.5
+}
+ultra_belt_starting_bottom = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 80,
+	height = 80,
+	frame_count = 32,
+	line_length = 16,
+	y = 960,
+	scale = 0.5
+}
+ultra_belt_starting_side = {
+	filename = ultra_belt_filename,
+	priority = "extra-high",
+	width = 40,
+	height = 40,
+	frame_count = 32,
+	line_length = 16,
+	y = 1120,
+	scale = 0.5
+}
 
-ultra_belt_vertical = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 40 ,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 160 ,scale = 0.5 }}
-
-ultra_belt_ending_top = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 80 ,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 320 ,scale = 0.5 }}
-
-ultra_belt_ending_bottom = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 120,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 480 ,scale = 0.5 }}
-
-ultra_belt_ending_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 160,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 640 ,scale = 0.5 }}
-
-ultra_belt_starting_top = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 200,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 800 ,scale = 0.5 }}
-
-ultra_belt_starting_bottom = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 240,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 960 ,scale = 0.5 }}
-
-ultra_belt_starting_side = {filename = ultra_belt_filename, priority = "extra-high", width = 40, height = 40, frame_count = 32, y = 280,
-	hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 80, height = 80, frame_count = 32, line_length = 16, y = 1120 ,scale = 0.5}}
-
-ultra_belt_animation_set = { animation_set = { filename = ultra_belt_filename, priority = "extra-high", width = 64, height = 64, frame_count = 16, direction_count = 20,
-   hr_version = { filename = hr_ultra_belt_filename, priority = "extra-high", width = 128, height = 128, scale = 0.5,	frame_count = 16, direction_count = 20}}}
+ultra_belt_animation_set = {
+	animation_set = {
+		filename = ultra_belt_filename,
+		priority = "extra-high",
+		width = 128,
+		height = 128,
+		scale = 0.5,
+		frame_count = 16,
+		direction_count = 20
+	}
+}
 
 ------------------------------------
 
@@ -192,32 +256,46 @@ function BetterBelts_addTechnology(thisName,thisIcon,thisType,thisEffect,thisPre
 
 	obj.unit.count = thisCount
 	if thisIngredients == 1 then
-		obj.unit.ingredients = {{"automation-science-pack", 1}}
+		obj.unit.ingredients = {
+			{"automation-science-pack", 1}
+		}
 	elseif thisIngredients == 2 then
-		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1}}
+		obj.unit.ingredients = {
+			{"automation-science-pack", 1},
+			{"logistic-science-pack", 1}
+		}
 	elseif thisIngredients == 3 then
-		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1}}
+		obj.unit.ingredients = {
+			{"automation-science-pack", 1},
+			{"logistic-science-pack", 1},
+			{"chemical-science-pack", 1}
+		}
 	elseif thisIngredients == 4 then
-		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1}}
+		obj.unit.ingredients = {
+			{"automation-science-pack", 1},
+			{"logistic-science-pack", 1},
+			{"chemical-science-pack", 1},
+			{"production-science-pack", 1}
+		}
 	elseif thisIngredients == 5 then
-		obj.unit.ingredients = {{"automation-science-pack", 1},{"logistic-science-pack", 1},{"chemical-science-pack", 1},{"production-science-pack", 1},{"utility-science-pack", 1}}
+		obj.unit.ingredients = {
+			{"automation-science-pack", 1},
+			{"logistic-science-pack", 1},
+			{"chemical-science-pack", 1},
+			{"production-science-pack", 1},
+			{"utility-science-pack", 1}
+		}
 	end
 	obj.unit.time = thisTime
 	obj.order = thisOrder
 	data.raw[obj.type][obj.name] = obj
 end
 
-
-
-
-
 function BetterBelts_BeltClass(className,classSpeed)
 
 	BetterBelts_addItem("fast-transport-belt",className .. "-transport-belt","a[transport-belt]-d[" .. className .. "-transport-belt]")
 	BetterBelts_addRecipe("fast-transport-belt",className .. "-transport-belt",{{type="item", name="iron-gear-wheel", amount=5},{type="item", name="express-transport-belt", amount=2}})
 	BetterBelts_addEntity_Belt(className .. "-transport-belt",classSpeed, className .. "-underground-belt-v1")
-
-
 	BetterBelts_addItem("fast-underground-belt",className .. "-underground-belt-v1","b[underground-belt]-d[" .. className .. "-underground-belt-v1]")
 	BetterBelts_addItem("fast-underground-belt",className .. "-underground-belt-v2","b[underground-belt]-d[" .. className .. "-underground-belt-v2]")
 	BetterBelts_addItem("fast-underground-belt",className .. "-underground-belt-v3","b[underground-belt]-d[" .. className .. "-underground-belt-v3]")
@@ -255,5 +333,3 @@ data.raw["item"]["express-loader"].flags = null
 data.raw["item"]["express-loader"].hidden = false
 
 BetterBelts_BeltClass("ultra",0.2)
-
-
