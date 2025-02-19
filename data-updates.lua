@@ -4,7 +4,7 @@ if deadlock then
 		colour              = {r=0,g=211,b=37},
 		technology          = "logistics-3",
 		order				= "d",
-		loader				= "BetterBelts_ultra-deadlock-loader", 		
+		loader				= "BetterBelts_ultra-deadlock-loader",
 		loader_ingredients  = {
 			{"express-transport-belt-loader",1},
 			{"iron-gear-wheel",40},
